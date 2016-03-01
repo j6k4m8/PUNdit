@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+import sys
+
+# use like: python pundit.py "blah"
+
 cmu_stream = open('cmudict/cmudict.dict', 'r')
 cmu = [line for line in cmu_stream]
 
@@ -81,7 +85,7 @@ def get_sentences_from_sound_list(sound_list, depth=0, stack=""):
 
 
 
-similar_sounds = get_similar_sound("i made my family disappear" + " a", 2)
+similar_sounds = get_similar_sound(sys.argv[1] + " a", 2)
 
 # print(list(similar_sounds)[:5])
 
